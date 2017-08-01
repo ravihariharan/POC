@@ -1,11 +1,16 @@
 package com.demo;
 
-import javax.enterprise.context.RequestScoped;
+import java.io.Serializable;
+
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 @Named
-@RequestScoped
-public class HelloWorld {
+//@ApplicationScoped // Working without "implements Serializable"
+//@RequestScoped //Working without "implements Serializable"
+@ViewScoped  // Working with implements Serializable
+//@SessionScoped // Working with implements Serializable
+public class HelloWorld implements Serializable{
 
     private String message = "Hello World JSF 2.3";
 
